@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Before root div</h1>
+    <div id="root">
+        <!-- <h1>Namaste React</h1> -->
+        <!-- Comment 3: 
+        The h1 tag will be replaced by the react code injected here.  -->
+        <!-- Comment 4: 
+        React is injected in this piece of code so it will only work here this makes react a 
+        beautiful js library to be used only in a particular part of code  -->
+    </div>
+    <h1>After root div</h1>
+    <!-- Comment 2
+        Here all the statements written before and after root will be executed as it is since react is 
+    not written in that part and it is only written in the div of id root -->
+<!-- 
+    <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Namaste React from Javascript";
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+    </script> -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script src="App.js"></script>
+<!-- Comment 1
+Order of the above script files is important. Since if we write our App.js script file in the top we will get a Reference Error stating React not found. Therefore in order to first import our React file to allow our App.js file to make use of React -->
+</body>
+</html>

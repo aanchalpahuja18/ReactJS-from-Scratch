@@ -1,0 +1,15 @@
+Summary of Lect 1:
+1. Hello World using HTML
+2. Hello World using JS
+3. Hello World using React by importing the cdn links
+4. Extracting our piece of code into App.js file
+5. We created the React element it is an object
+6. We created the root in which all the elements created inside react will be rendered/ putted inside.
+7. root.render() => To put the object that is the react element into our page. It is converted into html tag to make our browser understand it.
+8. createElement API takes 3 arguments.
+9. Whatever we are passing inside root.render() is getting replaced by the existing things in the root.
+10. If suppose there is something in the top & bottom of the page we can still use react in some portion of the page which makes react a powerful library to use.
+11. root.render() just affects the portion which is defined while creating it. Rest of the html remains same inside it and it is not affected by root.render()
+12. React is a library and not a full fledged framework but then too we can make a large scale application from it.
+We can also use react in our existing applications
+ 
