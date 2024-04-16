@@ -1,0 +1,102 @@
+Lecture 2 Notes:
+
+1. Igniting the react app means making it production ready with a lot of superpowers with it.
+2. Not only react but many packages and libraries are used to igniting our app.
+3. npm: npmjs.com
+NPM does not stands for Node Package Manager but everything apart from it.
+It does not have a full form.  
+npm manages the packages in the backend but it does not stands for Node Package Manager.
+npm is the largest repository for all the packages here every package is hosted so as to include the package in our app we can use npm. 
+All the libraries, utalities needed comes from npm
+Whenever we create our react app npm is already there inside it so we do not need to explicitly configure it. 
+With npm init package.json is created which is the configuration for npm. It basically keeps a track of all the dependancies we are using & also the version of that package installed in our system.
+The most important utility/dependancies is the bundler which bundles our app together and shifts it into 
+production.
+examples of bundler include webpack, parcel, weet.
+create react app on the backend uses the webpack bundler.
+All bundlers at the end of the day does the same thing although their algorithms or their way of doing it may be different.
+There are 2 dependancies which we can install:
+1. Dev - It means it is required for the development phase
+2. Normal - It is used in the production also
+Since we will use parcel as a bundler for our app and we will use it in our development phase therefore it is a dev dependancy and not a normal dependancy. 
+npm install -D parcel
+Above command will tell npm that we want to install parcel in dev dependancy mode.
+
+Before installing parcel to our app it was just a skeleton but parcel gives it muscles and strength required to be shifted onto production.
+
+Here we have just installed react from npm in order to use it in our app we have to write:
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+
+^ means whenever there would be a minor update in the package it will automatically be updated in our app too
+Caret (^) is used with the version of the parcel like: ^2.8.3
+whereas Tilde (~) is used whenever a major update will be there in the package it will automatically be updated in our app too but this can make our app to crash. 
+
+Difference between package.json and package-lock.json:
+package-lock.json keeps the record of exact version of that package. It also keeps a hash value which makes sure that whatever version is used in my machine will be the same which would be used in the production level.
+
+Node modules basically is a database which contains the code of all the dependancies, it is very heavy.
+
+Parcel as a project needed their own dependancies and those again would have their dependancies.
+These are known as transitive dependancies.
+
+Parcel is a beast. 
+Every dependancy will have its own package.json file and it will have its own dependancies.
+
+node_modules wont need to be pushed onto the github because they can be regenerated using 
+package-lock.json and package.json by using the command npm install
+
+Advice: Whatever you can regenerate do not put it on the git. git should only have essential things.
+
+
+npx parcel index.html: 
+It executes our parcel bundler.
+Parcel goes to our index.html and build our development build and hosts it into the localhost:1234
+
+1 way to get react into our app is via cdn links and another way to get react into our app is via npm.
+React end of the day is a JS package which is also hosted into the npm.
+
+CDN links is not a good way to bring react into our app.
+Why? Because we dont want our files to make a separate network call and it will also bring a defined version of the react so if in future any upgrade is happen to the react it wont be reflected in our app since we have imported the older version of react through the cdn links. 
+Therefore it is better to import react from our node module itslef so that package.json will keep track of the versions of react being used.
+
+npm install react or npm i react is one and the same thing.
+
+
+Advantages of Parcel:
+- Developer Build
+- Local Server
+- HMR: Hot Module Replacement
+- File Watching Algorithms: written in C++
+- Faster build using caching
+- Image optimization
+- Minification of our files 
+- Bundling
+- Compress files
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling : App can be installed in any of the older browsers as well, it gives the ability to open app in older versions of browsers as well. It generates a nomodule for older browsers also
+- Diagnostics: Beautiful errors shown in our app.
+- Error Handling
+- HTTPs :  Our app can be hosted into HTTPs as well. 
+- Tree shaking Algo: removes unused codes for us. the code which is not used in our entire app parcel removes it. 
+- Different build for dev and production bundles. 
+Since production takes some more time than dev.
+All the above things also helps us in our System Design Interviews.
+
+
+Parcel is also not doing everything on its own it has a lot of libraries on which it is monitoring them. 
+
+npx parcel build index.html
+Used to build production bundles
+All the files are created inside a dist folder which has compressed versions of our code files.
+
+.parcel-cache and dist are temporary folders which can also be regenerated therefore put them in git ignore.
+These are not pushed into github as our local won't be connected to the server directly, github is the one which connects our app to the server, so inside server as the package.json is pushed so it will install the node_modules, .parcel-cache & dist again inside it and it will be the copy of the ones created inside our local. Not the exact codes but the copies. 
+
+browserslist is an amazing powerful tool which gives us list of browsers to be used in our app and the percentage of people using that versions.
+
+
+Summary:  React is not the only thing that makes our React apps faster all the above engineering is done to make the React apps faster as it appears.

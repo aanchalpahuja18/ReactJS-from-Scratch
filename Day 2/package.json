@@ -1,0 +1,32 @@
+{
+  "name": "react-js",
+  "version": "1.0.0",
+  "description": "Learning React JS from scratch",
+  "scripts": {
+    "test": "jest",
+    "start": "rm -rf .parcel-cache && parcel",
+    "build": "rm -rf .parcel-cache && parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/aanchalpahuja18/ReactJS-from-Scratch.git)"
+  },
+  "keywords": [
+    "react",
+    "scratch",
+    "learning"
+  ],
+  "author": "Aanchal Pahuja",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 2 versions" 
+  ]
+}
