@@ -1,0 +1,89 @@
+Lecture 3 Notes:Laying the foundations of React App
+
+We write code for humans as well as machines. But first it is written for humans and then machines.
+
+npm run start = npm start 
+Above executes our package parcel with index.html because we have configured this inside our package.json.
+Inside the scripts:
+ "start": "parcel index.html", - For dev build
+ "build": "parcel build index.html"- For production build
+
+React element: What is it?
+It is equivalent to Dom object 
+
+React element is not an html element but it is a object. When we render this element to dom it becomes an html element.
+
+React.createElement => React Element (JS Object) => HTMLElement("render")
+const headings = React.createElement("h1", {id: "heading"}, "Day 3 of React");
+
+To make the developer's life easy by not writing these complicated syntaxes JSX (JavaScript Syntax) was introduced. JSX is like combining HTML & JS together and merging it into a single file.
+
+Creating react element using JSX:
+const jsxheadings = <h1 id="heading">Day 3 of React using JSX</h1>
+
+JSX is just a syntax whereas above is a react element altogether
+JSX is not html inside js, but it is a HTML-like or XML-like structure
+
+There is no difference between jsxheadings and headings since both are the similar objects. Alot of developers think that jsx is a part of react where irl it is not a part of react it is just a syntax we are following in order to get rid of lengthy core react syntaxes.
+
+
+
+const jsxheadings = <h1 id="heading">Day 3 of React using JSX</h1>
+Above is not a valid pure JS and it is also not understood by JS engine and the browsers. Since JS engine only understands EcmaSCRIPT (ES) versions of the codes. So how this above code is working when neither the JS engine nor the browser is able to understand it?
+Parcel is doing the job BTS. Above code is transpiled before it goes to the JS engine. Transpiled is this code is converted in the code that browsers can understand. Parcel is also not doing this itself. It is basically a manager for all the packages it comes up with. So the responsibility of transpilation is given to a package known as Babbel. Parcel has installed Babbel and not us. 
+
+
+JSX => Babel transpiles it to React.createElement => React Element (JS Object) => HTMLElement("render")
+Babel is converting our JSX into React.createElement
+babel not only converts our JSX into React.createElement but also it converts our code where the older versions of browsers may not understand ES6 scripts Babel converts our code to make it suitable for the older versions to understand it better.
+
+If we have to give attributes to JSX it is written in camelCase conventions
+eg: const jsxheadings2 = (<h1 className="heading">
+    {element} // Inserting element inside another element
+    Namaste React
+</h1>)
+
+If we have to write our jsx code in multiple lines we have to wrap it in round brackets (parentheses) like above for babel to understand where it starts and where it ends. Whereas in single line code there is no need to wrap it in parentheses.
+
+
+=> React Components: Everything is a component in react. Always start the names of the components in capital letters.
+
+React components: There are 2 types of react components:
+1. Class based components - old way of writing code (Uses JS classes)
+2. Functional Components - new way of writing code (Uses JS functions)
+
+=> React Functional components: It is just a normal JS functions which returns a React element or a piece of JSX code.
+
+Creating functional components: 
+const HeadingComponent2 = () => (
+<div id="container">
+    {Title()} // 4. Since it is a JS expression so we can also call a function inside it and since Title is a functional component and at the end of the day they are just functions
+<Title/> 
+<Title></Title> // 3. Both are the same things
+{jsxheadings2}  //   Adding a react element inside a component
+<h2>How to add one component into another. Above is component composition</h2>
+    <h1>Namaste React functional component</h1>
+</div>
+);
+
+=> Adding '{}' inside a component we can write any JS expression/code inside it. 
+
+=> Component Composition : Adding 1 component into another
+
+
+Q) How to render react component into our web page.
+root.render(<HeadingComponent2/>)
+
+=> We can also use normal functions as are functional components but then we have to compulsorily use a return statement. But arrow functions are a new way of industry standard:
+eg: const Heading = function () {
+    return (
+    <h2> Heyaa People! </h2>
+    );
+}
+
+
+IMP Notes:
+
+1. What makes react code readable is not react but it is jsx which is not a part of react and it is a complete different thing.
+
+2. Suppose we are calling certain data from the api and it is fetched into our react code and suppose the api is sending some malicious data to steal certain things from our local like cookies, data, etc. this will be handled by jsx and the malicious code will be filtered out before injecting our code. JSX will Sanitised code. 
