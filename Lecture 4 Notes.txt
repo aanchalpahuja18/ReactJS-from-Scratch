@@ -1,0 +1,39 @@
+Lecture 4 Notes:
+
+First thing before building an app is to plan things properly:
+
+Plan:
+1. Exactly know what to build - The UI design basically
+2. Write Code
+3. 
+
+
+Inline CSS can be given inside JS objects and not like regular inline styles we give.
+Although inline styles are not a preferred way to write your code. 
+
+
+How do we make a dynamic card?
+
+Props (Properties) :
+When we want to dynamically pass some data to the component we pass it in the form of props
+Something which we can pass it to the components. Since functional components at the end of the day is just a normal JS functions so props at the end of the day is just the arguments which we are passing into the functions.
+Passing a prop to a component is just as passing an argument to the functions.
+Props are all wrapped up and passed into the components in the form of objects
+
+Configue Driven UI:
+Our website/UI is driven by Data & Configues (data inside the API).
+Controlling your UI based on data which comes from the backend.
+
+Unique key prop:
+Whenever we do a map we have to give a unique key compulsorily otherwise react will throw a warning.
+Each of the item should have a unique key property.
+Whenever we are looping to a list of items we have to give a key. 
+key is a reserved word. 
+We can also have indexes(loop) as our unique key but react itself says that never use indexes for representing a key. 
+If our data does not have a unique id then we can use indexes but again it is not a good practice to use them.
+
+But why?
+All the children at the same level must be uniquely represented because whenever suppose a new card is to be added on the UI then if no key is added React will re-render the whole cards as it treats them similarly and without any partiality. 
+So suppose a card comes at the 2nd position, React will again re-render whole cards if not given the keys. 
+Now if we have given a unique ID to all the cards React will simply push the card on that position acc to its unique key.
+
