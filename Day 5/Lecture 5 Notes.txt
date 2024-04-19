@@ -1,0 +1,97 @@
+Lecture 5 Notes: React Hooks
+
+Anything we can do with React we can also do with HTML, CSS & JS.
+Then why React?
+
+It makes our development experience easy. React makes our coding experience fast and also optimizes things on webpage which makes it even more faster.
+
+React Hooks will be covered in this Lecture.
+
+Best practice in the industry is to make separate files for separate components. 
+
+All the main code in the entire react project will be kept in the src folder.
+
+Whenever we have a hard coded data we do not have to keep it inside a components folder.
+Keep all the hard coded data inside a separate files like common, configue, utils.
+
+
+2 types of export and import:
+- Default export/import:
+export default Component
+import Component fron "path";
+
+- Named Export/Import:
+
+export const Component
+import {Component} from "path;
+ 
+By default a file can export only a single thing but what if we want to export 2 or more files together then we use Named Export:
+
+Just write export in front of the const variable.
+
+Now how to import a named export:-
+
+import { CDN_URL } from "../utils/constants"
+
+Can I use a default export along with Named Export?
+It works same as individual exports.
+
+UI should be updated according to the Data Layer.
+
+To create a super powerful variable we use React Hooks.
+Hooks: It is normal JS function written by Meta Developers which is given to us by React. 
+It comes with some super powers, utilities, etc.
+Hooks - Utility Functions
+
+2 most imp React Hooks:
+
+- useState()
+- useEffect()
+
+1. useState(): To generate super powerful react variables.
+We have to import above using a named import.
+It is used to generate the state variables.
+State basically means to maintain the state of our components/app.
+These React hooks keeps our UI layer in sync with our Data Layer/code
+
+
+To update a state variable cannot be done like a normal JS variable.
+eg: listofRestaurants = [] Wrong way to update
+To modify a state variable which comes from the react hook we have to use a function which comes as the 2nd parameter in the below array.
+  const [listofRestaurants, setlistofRestaurants] = useState(resList)
+
+Here useState gives us an array of state variable which has to be stored in an array that is why [listofrestaurants] is written. resList is the default parameter we wanted our listofrestaurants to have. 
+
+
+Whenever a state variable updates/changes React triggers its Diff algorithm & re-renders the components.
+The logic of updating the UI is known as Re-Rendering in React.
+
+React is only good at DOM operations.
+
+
+React Algorithm:
+React BTS uses something known as Reconciliation Algo.
+It is a.k.a React Fiber was introduced in React16.
+
+React creates a virtual DOM of the UI.
+Virtual DOM- Not an actual DOM. 
+It is just a representation of actual DOM. 
+It is nothing but a normal JS object representation.
+
+
+Diff Algorithms: It finds out the difference between the updated Virtual DOM & the previous(old) Virtual DOM before updation.
+
+Suppose we have 7 res-cards & we clicked on the button to filter it into 3 res-cards having rating >= 4 so basically it finds out the difference between updated virtual dom & old virtual dom & then on the basis of this calculated difference, after finding out the difference then it updates the actual DOM & that is how React becomes faster.
+
+Whenever there is a change in the state variable React will find the difference between the Virtual DOM and then it will re-render the UI. As soon as the modification function is called React does all the above stuff to re-render the UI.
+
+
+Why is react fast? Because it is doing efficient DOM manipulation because it has a Virtual DOM.
+Virtual DOM is not a React thing it was way back released in software engineering.
+React took it and brings it algorithm based on virtual dom concept.
+
+
+ 
+Read more about React Fiber on github: acdlite/react-fiber
+
+
